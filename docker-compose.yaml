@@ -18,10 +18,10 @@ services:
       - /opt/certbot-data/letsencrypt/archive/muflone.com/cert1.pem:/etc/nginx/ssl/cert.pem:ro
       - /opt/certbot-data/letsencrypt/archive/muflone.com/chain1.pem:/etc/nginx/ssl/chain.pem:ro
       - /opt/certbot-data/letsencrypt/archive/muflone.com/fullchain1.pem:/etc/nginx/ssl/fullchain.pem:ro
-      - /opt/nginx-data/default:/var/www/default:ro
-      - /opt/nginx-data/muflone.com:/var/www/muflone.com:ro
-      - /opt/nginx-data/repositories.muflone.com:/var/www/repositories.muflone.com:ro
-      - /opt/nginx-data/vbsimple.net:/var/www/vbsimple.net:ro
+      - ./data/default:/var/www/default:ro
+      - ./data/muflone.com:/var/www/muflone.com:ro
+      - ./data/repositories.muflone.com:/var/www/repositories.muflone.com:ro
+      - ./data/vbsimple.net:/var/www/vbsimple.net:ro
 
 networks:
   web:
