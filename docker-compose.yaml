@@ -16,6 +16,7 @@ services:
       - ./data/muflone.com:/var/www/muflone.com:ro
       - ./data/repositories.muflone.com:/var/www/repositories.muflone.com:ro
       - ./data/vbsimple.net:/var/www/vbsimple.net:ro
+      - ./data/yourls-static:/var/www/yourls:ro
       - ./dhparam.pem:/etc/nginx/ssl/dhparam.pem:ro
       - ./logs:/var/log/nginx:rw
       - /opt/certbot-data/live/muflone.com/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
