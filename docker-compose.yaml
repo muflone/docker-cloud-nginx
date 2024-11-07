@@ -1,30 +1,27 @@
-version: '3'
-
 services:
-  nginx:
+  app:
     image: nginx:1.25.4-alpine3.18-slim
-    container_name: nginx
-    restart: unless-stopped
     networks:
-      - web
+      - default
     ports:
       - 80:80/tcp
       - 443:443/tcp
     volumes:
-      - ./conf.d:/etc/nginx/conf.d:ro
-      - ./data/default:/var/www/default:ro
-      - ./data/muflone.com:/var/www/muflone.com:ro
-      - ./data/repositories.muflone.com:/var/www/repositories.muflone.com:ro
-      - ./data/vbsimple.net:/var/www/vbsimple.net:ro
-      - ./data/yourls-static:/var/www/yourls:ro
-      - ./dhparam.pem:/etc/nginx/ssl/dhparam.pem:ro
-      - ./logs:/var/log/nginx:rw
+      - conf:/etc/nginx/conf.d:ro
+      - data:/var/www:ro
+      - logs:/var/log/nginx:rw
       - /opt/certbot-data/live/muflone.com/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
       - /opt/certbot-data/live/muflone.com/cert.pem:/etc/nginx/ssl/cert.pem:ro
       - /opt/certbot-data/live/muflone.com/chain.pem:/etc/nginx/ssl/chain.pem:ro
       - /opt/certbot-data/live/muflone.com/fullchain.pem:/etc/nginx/ssl/fullchain.pem:ro
 
 networks:
-  web:
-    external: true
+  default:
+
+volumes:
+  conf:
+
+  data:
+
+  logs:
 
