@@ -7,7 +7,6 @@ services:
       - 80:80/tcp
       - 443:443/tcp
     volumes:
-      - logs:/var/log/nginx:rw
       - /opt/certbot-data/live/muflone.com/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
       - /opt/certbot-data/live/muflone.com/cert.pem:/etc/nginx/ssl/cert.pem:ro
       - /opt/certbot-data/live/muflone.com/chain.pem:/etc/nginx/ssl/chain.pem:ro
@@ -18,9 +17,6 @@ services:
 networks:
   public:
     external: true
-
-volumes:
-  logs:
 
 secrets:
   docker-cloud-nginx_dhparam.pem:
