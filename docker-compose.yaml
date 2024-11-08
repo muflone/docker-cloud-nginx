@@ -7,8 +7,8 @@ services:
       - 80:80/tcp
       - 443:443/tcp
     volumes:
-      - conf:/etc/nginx/conf.d:ro
-      - data:/var/www:ro
+      - conf:/etc/nginx/conf.d:rw
+      - data:/var/www:rw
       - logs:/var/log/nginx:rw
       - /opt/certbot-data/live/muflone.com/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
       - /opt/certbot-data/live/muflone.com/cert.pem:/etc/nginx/ssl/cert.pem:ro
