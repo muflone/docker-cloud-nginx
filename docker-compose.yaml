@@ -1,14 +1,12 @@
 services:
   app:
-    image: nginx:1.25.4-alpine3.18-slim
+    image: ilmuflone/muflone-rendered:2024-11-08
     networks:
       - public
     ports:
       - 80:80/tcp
       - 443:443/tcp
     volumes:
-      - conf:/etc/nginx/conf.d:rw
-      - data:/var/www:rw
       - logs:/var/log/nginx:rw
       - /opt/certbot-data/live/muflone.com/privkey.pem:/etc/nginx/ssl/privkey.pem:ro
       - /opt/certbot-data/live/muflone.com/cert.pem:/etc/nginx/ssl/cert.pem:ro
@@ -20,9 +18,5 @@ networks:
     external: true
 
 volumes:
-  conf:
-
-  data:
-
   logs:
 
