@@ -22,3 +22,8 @@ networks:
 volumes:
   logs:
 
+secrets:
+  docker-cloud-nginx_dhparam.pem:
+    file: dhparam.pem
+    external: true
+
