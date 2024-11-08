@@ -24,6 +24,6 @@ volumes:
 
 secrets:
   docker-cloud-nginx_dhparam.pem:
-    file: dhparam.pem
+    file: /etc/nginx/ssl/dhparam.pem
     external: true
 
