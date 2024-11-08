@@ -1,0 +1,32 @@
+name: Docker Image CI
+
+on:
+  push:
+    tags:
+      - '*'
+  workflow_dispatch:
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ilmuflone/muflone-rendered:$(date +%s)
+
+    - id: docker-publish
+      name: Build image
+      uses: bitovi/github-actions-docker-publish@v1.0.7
+      with:
+        # Checkout the repository
+        org_name: ilmuflone
+        repo_name: muflone-rendered
+        use_latest: 'true'
+        docker_username: ${{ secrets.DOCKERHUB_USERNAME }}
+        docker_password: ${{ secrets.DOCKERHUB_PASSWORD }}
+    - run: |
+        echo "Image Created:  ${{ env.image }}"
+        echo "Tag Created: ${{ env.tag }}"
