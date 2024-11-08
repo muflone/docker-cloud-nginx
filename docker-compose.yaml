@@ -12,13 +12,13 @@ services:
       - /opt/certbot-data/live/muflone.com/chain.pem:/etc/nginx/ssl/chain.pem:ro
       - /opt/certbot-data/live/muflone.com/fullchain.pem:/etc/nginx/ssl/fullchain.pem:ro
     secrets:
-      - docker-cloud-nginx_dhparam.pem
+      - nginx_dhparam.pem
 
 networks:
   public:
     external: true
 
 secrets:
-  docker-cloud-nginx_dhparam.pem:
+  nginx_dhparam.pem:
     external: true
 
