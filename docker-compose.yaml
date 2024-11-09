@@ -1,6 +1,6 @@
 services:
   app:
-    image: ilmuflone/muflone-rendered:2024-11-08.5
+    image: ilmuflone/muflone-rendered:2024-11-09
     networks:
       - public
     ports:
