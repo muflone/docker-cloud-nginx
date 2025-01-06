@@ -1,6 +1,6 @@
 services:
   app:
-    image: ilmuflone/muflone-rendered:2024-11-09.2
+    image: nginx:1.25.4-alpine3.18-slim
     container_name: nginx
     restart: unless-stopped
     networks:
