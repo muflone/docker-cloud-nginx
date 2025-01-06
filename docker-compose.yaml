@@ -1,8 +1,14 @@
 services:
   app:
     image: ilmuflone/muflone-rendered:2024-11-09.2
+    container_name: nginx
+    restart: unless-stopped
     networks:
       - public
+    volumes:
+      - conf:/etc/nginx/conf.d:ro
+      - data:/var/www:ro
+      - logs:/var/log/nginx:rw
 
 networks:
   public:
