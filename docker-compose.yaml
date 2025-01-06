@@ -6,9 +6,9 @@ services:
     networks:
       - public
     volumes:
-      - conf:/etc/nginx/conf.d:ro
-      - data:/var/www:ro
-      - logs:/var/log/nginx:rw
+      - ./conf:/etc/nginx/conf.d:ro
+      - ./data:/var/www:ro
+      - ./logs:/var/log/nginx:rw
 
 networks:
   public:
