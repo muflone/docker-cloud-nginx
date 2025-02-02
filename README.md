@@ -21,5 +21,5 @@ Installation
 
 Build the container using Docker compose with:
 
-    docker-compose up -d
+    docker compose up -d
 
