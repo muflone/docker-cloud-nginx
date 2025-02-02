@@ -1,7 +1,7 @@
 services:
   app:
-    image: nginx:1.25.4-alpine3.18-slim
     container_name: nginx
+    image: nginx:1.27.3-alpine3.20-slim
     restart: unless-stopped
     networks:
       - public
