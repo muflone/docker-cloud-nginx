@@ -2,7 +2,7 @@ Docker Nginx for Cloud
 ======================
 **Description:** Docker for Nginx
 
-**Copyright:** 2023 Fabio Castelli (Muflone) <muflone(at)muflone.com>
+**Copyright:** 2023-2025 Fabio Castelli (Muflone) <muflone(at)muflone.com>
 
 **License:** GPL-3+
 
