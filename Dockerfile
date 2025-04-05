@@ -26,7 +26,7 @@ RUN tar xzf "/tmp/${app2_name}-${app2_version}.tar.gz" -C "/tmp" && \
     rm "/tmp/${app2_name}-${app2_version}.tar.gz" && \
     mv "/tmp/${app2_name}-${app2_version}" "/var/www/vbsimple.net"
 
-COPY "conf.d" "/etc/nginx/conf.d"
+COPY "conf" "/etc/nginx/conf.d"
 
 EXPOSE 80/tcp
 
